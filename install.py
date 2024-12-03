@@ -81,4 +81,4 @@ def check_package_installed(package_name, version=None):
 
 if __name__ == "__main__":
     download_models()
-    check_and_install_dependencies()
+    # check_and_install_dependencies()
