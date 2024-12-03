@@ -23,7 +23,7 @@ warnings.filterwarnings("ignore", category=FutureWarning, message="Arguments oth
 
 model_dir = Path(paths_internal.models_path)
 print(model_dir)
-vis = get_image_colorizer(root_folder=model_dir, render_factor=render_factor, artistic=artistic)
+vis = get_image_colorizer(root_folder=model_dir, render_factor=35, artistic=False)
 
 def deoldify_api(_: gr.Blocks, app: FastAPI):
     @app.post("/deoldify/image")
