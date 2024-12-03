@@ -428,7 +428,7 @@ def get_image_colorizer(
 
 def get_stable_image_colorizer(
     root_folder: Path = Path('./'),
-    weights_name: str = 'ColorizeStable_gen',
+    weights_name: str = 'ColorizeStable_gen.pth',
     results_dir='result_images',
     render_factor: int = 35
 ) -> ModelImageVisualizer:
