@@ -10,16 +10,11 @@ from pkg_resources import DistributionNotFound, VersionConflict
 MODEL_URLS = {
     "stable_model": "https://huggingface.co/spensercai/DeOldify/resolve/main/ColorizeStable_gen.pth",
     "artistic_model": "https://huggingface.co/spensercai/DeOldify/resolve/main/ColorizeArtistic_gen.pth",
-    "video_model": "https://huggingface.co/spensercai/DeOldify/resolve/main/ColorizeVideo_gen.pth"
 }
 
 DEPS = [
     'wandb',
     'fastai==1.0.60',
-    'tensorboardX',
-    'ffmpeg',
-    'ffmpeg-python',
-    'yt-dlp',
     'opencv-python',
     'Pillow'
 ]
