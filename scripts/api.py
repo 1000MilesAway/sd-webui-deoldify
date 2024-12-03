@@ -28,7 +28,7 @@ def deoldify_api(_: gr.Blocks, app: FastAPI):
         render_factor: int = Body(35,title="render factor"),
         artistic: bool = Body(False,title="artistic")
     ):
-        model_dir = Path(paths_internal.models_path+'/deoldify')
+        model_dir = Path(paths_internal.models_path)
         print(model_dir)
         vis = get_image_colorizer(root_folder=model_dir, render_factor=render_factor, artistic=artistic)
         
