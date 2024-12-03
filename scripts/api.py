@@ -21,6 +21,10 @@ warnings.filterwarnings("ignore", category=UserWarning, message=".*?Your .*? set
 warnings.filterwarnings("ignore", category=UserWarning, message="The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.")
 warnings.filterwarnings("ignore", category=FutureWarning, message="Arguments other than a weight enum or `None`.*?")
 
+model_dir = Path(paths_internal.models_path)
+print(model_dir)
+vis = get_image_colorizer(root_folder=model_dir, render_factor=render_factor, artistic=artistic)
+
 def deoldify_api(_: gr.Blocks, app: FastAPI):
     @app.post("/deoldify/image")
     async def deoldify_image(
@@ -28,9 +32,7 @@ def deoldify_api(_: gr.Blocks, app: FastAPI):
         render_factor: int = Body(35,title="render factor"),
         artistic: bool = Body(False,title="artistic")
     ):
-        model_dir = Path(paths_internal.models_path)
-        print(model_dir)
-        vis = get_image_colorizer(root_folder=model_dir, render_factor=render_factor, artistic=artistic)
+
         
         # 判断input_image是否是url
         if input_image.startswith("http"):
